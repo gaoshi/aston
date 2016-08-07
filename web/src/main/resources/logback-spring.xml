@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <!-- file pattern -->
+    <property name="FILE_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %level %7.7relative - [%30.30thread] [%60.60logger:%line] : %msg%n"/>
+
+    <!-- root log level -->
+    <property name="ROOT_LOG_LEVEL" value="@root.log.level@"/>
+
+    <!-- stdout log file name -->
+    <property name="STDOUT_NAME" value="aston_stdout"/>
+
+    <!-- error log file name -->
+    <property name="ERROR_NAME" value="aston_error"/>
+
+    <!-- warn log file name -->
+    <property name="WARN_NAME" value="aston_warn"/>
+
+    <!-- info log file name -->
+    <property name="INFO_NAME" value="aston_info"/>
+
+    <springProfile name="dev">
+        <property name="CATALINA_APPLOG" value="logs"/>
+    </springProfile>
+
+    <appender name="STDOUT_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${CATALINA_APPLOG}/${STDOUT_NAME}.log</file>
+        <encoder>
+            <pattern>${FILE_PATTERN}</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>200MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <fileNamePattern>${CATALINA_APPLOG}/archive/${STDOUT_NAME}-%d{yyyy-MM-dd}-%i.log.gz
+            </fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="@root.log.level@">
+        <appender-ref ref="STDOUT_FILE"/>
+        <springProfile name="dev">
+            <appender-ref ref="CONSOLE"/>
+        </springProfile>
+    </root>
+</configuration>

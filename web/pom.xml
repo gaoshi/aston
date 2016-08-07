@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>aston</artifactId>
+        <groupId>com.wz.boot</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>aston-web</artifactId>
+    <packaging>war</packaging>
+
+    <name>aston-web</name>
+    <url>http://maven.apache.org</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-tools</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+
+        <!--<dependency>-->
+        <!--<groupId>foundation.stack.datamill</groupId>-->
+        <!--<artifactId>core</artifactId>-->
+        <!--<version>0.1.0</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+        <!--<groupId>io.vertx</groupId>-->
+        <!--<artifactId>vertx-core</artifactId>-->
+        <!--<version>3.3.2</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>io.vertx</groupId>-->
+        <!--<artifactId>vertx-codegen</artifactId>-->
+        <!--<version>3.3.2</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>io.vertx</groupId>-->
+        <!--<artifactId>vertx-web</artifactId>-->
+        <!--<version>3.3.2</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>io.vertx</groupId>-->
+        <!--<artifactId>vertx-jdbc-client</artifactId>-->
+        <!--<version>3.3.2</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>io.vertx</groupId>-->
+        <!--<artifactId>vertx-sql-common</artifactId>-->
+        <!--<version>3.3.2</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>io.vertx</groupId>-->
+        <!--<artifactId>vertx-redis-client</artifactId>-->
+        <!--<version>3.3.2</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>io.vertx</groupId>-->
+        <!--<artifactId>vertx-mysql-postgresql-client</artifactId>-->
+        <!--<version>3.3.2</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>org.jooby</groupId>-->
+        <!--<artifactId>jooby</artifactId>-->
+        <!--<version>0.16.0</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>com.sparkjava</groupId>-->
+        <!--<artifactId>spark-core</artifactId>-->
+        <!--<version>2.5</version>-->
+        <!--</dependency>-->
+    </dependencies>
+    <build>
+        <finalName>aston</finalName>
+        <plugins>
+            <!-- spring boot -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.wz.boot.aston.Application</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>springloaded</artifactId>
+                        <version>1.2.6.RELEASE</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+</project>
