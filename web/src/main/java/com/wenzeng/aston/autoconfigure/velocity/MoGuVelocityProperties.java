@@ -1,4 +1,4 @@
-package com.wz.boot.aston.autoconfigure;
+package com.wenzeng.aston.autoconfigure.velocity;
 
 import org.springframework.boot.autoconfigure.template.AbstractTemplateViewResolverProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;

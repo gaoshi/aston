@@ -1,4 +1,4 @@
-package com.wz.boot.aston.autoconfigure;
+package com.wenzeng.aston.autoconfigure.velocity;
 
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;

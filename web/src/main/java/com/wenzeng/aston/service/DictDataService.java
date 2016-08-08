@@ -1,4 +1,4 @@
-package com.wz.boot.aston.service;
+package com.wenzeng.aston.service;
 
 /**
  * @author wenzeng

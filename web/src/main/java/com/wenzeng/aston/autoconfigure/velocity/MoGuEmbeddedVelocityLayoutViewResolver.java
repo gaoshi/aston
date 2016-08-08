@@ -1,4 +1,4 @@
-package com.wz.boot.aston.autoconfigure;
+package com.wenzeng.aston.autoconfigure.velocity;
 
 import org.springframework.web.servlet.view.AbstractUrlBasedView;
 import org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver;

@@ -1,4 +1,4 @@
-package com.wz.boot.aston.utils;
+package com.wenzeng.aston.utils;
 
 
 import java.util.concurrent.TimeUnit;

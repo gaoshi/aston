@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wenzeng.aston.dal.DictDao">
+
+    <sql id="SelectClause">
+      id, parentId, name, instruction,uniqueCode,sort, created, updated, isDeleted
+    </sql>
+
+    <sql id="queryDictWhereClause">
+        <where>
+            <if test="id != null and id > 0">
+                AND id = #{id}
+            </if>
+            <if test="parentId != null and parentId > 0">
+                AND parentId = #{parentId}
+            </if>
+            <if test="name != null">
+                AND name LIKE CONCAT('%',#{name},'%' )
+            </if>
+            AND isDeleted = 0
+        </where>
+    </sql>
+
+    <sql id="queryDictOrderByClause">
+        <if test="orderBy != null">
+            ORDER BY ${orderBy}
+        </if>
+    </sql>
+
+    <sql id="queryDictLimitClause">
+        <choose>
+            <when test="offset != null and offset >= 0 and limit != null and limit > 0">
+                LIMIT #{offset}, #{limit}
+            </when>
+            <otherwise>
+                LIMIT 0, 10
+            </otherwise>
+        </choose>
+    </sql>
+
+    <select id="queryDict" parameterType="com.wenzeng.aston.dto.query.DictQuery"
+            resultType="com.wenzeng.aston.domain.entity.Dict">
+        SELECT
+        <include refid="SelectClause"/>
+        FROM Dict
+        <include refid="queryDictWhereClause"/>
+        <include refid="queryDictOrderByClause"/>
+        <include refid="queryDictLimitClause"/>
+    </select>
+</mapper>

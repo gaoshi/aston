@@ -1,5 +1,7 @@
-package com.wz.boot.aston.web.controller;
+package com.wenzeng.aston.web.controller;
 
+import org.apache.ibatis.annotations.Select;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,11 +16,6 @@ public class DashboardController {
     @RequestMapping({"/dashboard", "/main", "/"})
     public String dashboard() {
         return "dashboard";
-    }
-
-    @RequestMapping("dict")
-    public void dict(ModelMap modelMap) {
-
     }
 }
 

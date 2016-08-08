@@ -1,4 +1,4 @@
-package com.wz.boot.aston.autoconfigure;
+package com.wenzeng.aston.autoconfigure.velocity;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

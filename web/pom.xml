@@ -21,6 +21,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+
+        <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity</artifactId>
         </dependency>
@@ -28,13 +34,58 @@
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-tools</artifactId>
-            <version>2.0</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
         </dependency>
 
+        <!-- http core -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+
+        <!-- job -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz-jobs</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.nutz</groupId>
+            <artifactId>nutz</artifactId>
+        </dependency>
         <!--<dependency>-->
         <!--<groupId>foundation.stack.datamill</groupId>-->
         <!--<artifactId>core</artifactId>-->
@@ -86,6 +137,11 @@
         <!--<artifactId>spark-core</artifactId>-->
         <!--<version>2.5</version>-->
         <!--</dependency>-->
+        <!--<dependency>-->
+        <!--<groupId>com.google.inject</groupId>-->
+        <!--<artifactId>guice</artifactId>-->
+        <!--<version>4.1.0</version>-->
+        <!--</dependency>-->
     </dependencies>
     <build>
         <finalName>aston</finalName>
@@ -95,7 +151,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.wz.boot.aston.Application</mainClass>
+                    <mainClass>com.wenzeng.aston.Application</mainClass>
                 </configuration>
                 <executions>
                     <execution>
